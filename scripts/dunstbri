@@ -1,0 +1,9 @@
+#!/bin/sh
+# changeBrighness
+
+msgTag="brightnesschange"
+
+brightness="$(light -G)"
+
+# Show th brightness notification
+notify-send -a "changeBrightness" -h string:x-dunst-stack-tag:$msgTag -h int:value:"${brightness}" "Яркость" --expire-time=1000
